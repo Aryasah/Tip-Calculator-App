@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+*{
+font-family: 'Space Mono', monospace;
+}
+/* - Strong cyan: hsl(172, 67%, 45%)
+
+
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Dark grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%)
+
+
+
+- Font size (form inputs): 24px
+ */
+
+
+ .app{
+   width:100%;
+   min-height: 100vh;
+   background-color:hsl(185, 41%, 84%);
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+ .app > h2{
+   font-size:24px;
+   color: hsl(184, 14%, 56%);
+   text-transform: uppercase;
+   letter-spacing: 3px;
+   margin-bottom:40px;
+   font-weight:600;
+ }
+ .container{
+   width:55vw;
+   background-color:hsl(0, 0%, 100%);
+   height:350px;
+   display:flex;
+   border-radius: 10px;
+ }
+ .left{
+   flex:0.5;
+   display:flex;
+   flex-direction: column;
+   margin:10px;
+   background-color:transparent;
+   justify-content:space-between;
+   padding:10px;
+ }
+ .left .bill-input{
+   display:flex;
+   flex-direction: column;
+   color:gray;
+ }
+ .left .bill-input h4{
+   font-size:10px;
+   font-weight: 500;
+ }
+ .left .bill-input .input-form{
+   width:100%;
+   display:flex;
+   height:24px;
+   justify-content:space-between;
+   border-radius: 5px;
+   /* border:1px solid hsl(172, 67%, 45%); */
+   background-color:hsl(189, 41%, 97%);
+ }
+ .left .bill-input .input-form img{
+   height:10px;
+   padding:5px;
+ }
+ .left .bill-input input{
+   flex:auto;
+   border:none;
+   outline:none;
+   background-color:hsl(189, 41%, 97%);
+   text-align: right;
+   cursor: pointer;
+ }
+ .left .bill-input .input-option{
+   display:grid;
+   grid-template-columns: 33% 33% 33%;
+ }
+ .left .bill-input .input-option .form-check{
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   margin:5px;
+   padding:5px 2px;
+   border-radius:3px;
+   background-color:hsl(183, 100%, 15%);
+   cursor:pointer;
+ }
+ .left .bill-input .input-option .form-check:hover{
+  background-color:hsl(172, 67%, 45%);
+ }
+ .left .bill-input .input-option .form-check:nth-child(6){
+   background-color:transparent;
+ }
+ .left .bill-input .input-option .form-check .radio{
+   display:none;
+ }
+ .left .bill-input .input-option .form-check .custom{
+   width:100%;
+   font-size: 12px;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   text-align: center;
+   cursor: pointer;
+   height:100%;
+   background-color:transparent;
+ }
+
+
+ .left .bill-input .input-option .form-check label{
+   font-size:12px;
+   font-weight: 600;
+   color:white;
+ }
+input[type="radio"]:checked .form-check {
+   background-color:hsl(172, 67%, 45%);
+ }
+ .red{border:1px solid red;}
+ .right{
+   flex:0.5;
+   display:flex;
+   flex-direction: column;
+   justify-content:space-between;
+   margin:10px;
+   border-radius:10px;
+   padding:20px;
+   background-color:hsl(183, 100%, 15%);
+ }
+ .right-top{
+   display:flex;
+   flex-direction: column;
+   justify-content:space-around;
+ }
+ .right-top .per-person{
+   display:flex;
+   margin-bottom: 20px;
+   justify-content:space-between;
+ }
+ .right-top .per-person .tip-left{
+   display: flex;
+   flex-direction: column;
+ }
+ .right-top .per-person .tip-left h5{
+   font-size:14px;
+   color:hsl(185, 41%, 84%);
+ }
+.right-top .per-person .tip-left p{
+  font-size: 12px;
+  text-transform: lowercase;
+  color:hsl(186, 14%, 43%);
+}
+.tip-right{
+  font-size:24px;
+  color:hsl(172, 67%, 45%);
+}
+.right-bottom button{
+  text-transform: uppercase;
+  width:100%;
+  padding:10px;
+  border-radius:5px;
+  border:none;
+  font-weight: 500;
+  cursor: pointer;
+  background-color:hsla(186, 36%, 39%, 0.863);
+}
+.right-bottom button:hover{
+  background-color:hsl(172, 67%, 45%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width:768px)
+{
+  .container{
+    flex-direction: column;
+    height:fit-content;
+    width:100%;
+    margin-bottom: 0;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .left{
+    flex:1;
   }
-  to {
-    transform: rotate(360deg);
+  .right{
+    flex:1;
   }
 }
