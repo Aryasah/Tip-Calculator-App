@@ -57,6 +57,9 @@ font-family: 'Space Mono', monospace;
    flex-direction: column;
    color:gray;
  }
+ .left .bill-input .top-left input:focus{
+  border:1px solid  hsl(172, 67%, 45%);
+}
  .left .bill-input h4{
    font-size:10px;
    font-weight: 500;
@@ -64,14 +67,14 @@ font-family: 'Space Mono', monospace;
  .left .bill-input .input-form{
    width:100%;
    display:flex;
-   height:24px;
    justify-content:space-between;
+   align-items: center;
    border-radius: 5px;
    /* border:1px solid hsl(172, 67%, 45%); */
    background-color:hsl(189, 41%, 97%);
  }
  .left .bill-input .input-form img{
-   height:10px;
+   height:14px;
    padding:5px;
  }
  .left .bill-input input{
@@ -80,34 +83,41 @@ font-family: 'Space Mono', monospace;
    outline:none;
    background-color:hsl(189, 41%, 97%);
    text-align: right;
-   cursor: pointer;
+   cursor: pointer;font-size: 24px;
  }
+
  .left .bill-input .input-option{
    display:grid;
    grid-template-columns: 33% 33% 33%;
  }
- .left .bill-input .input-option .form-check{
+ .left .bill-input .input-option .form-check label{
    display:flex;
    justify-content:center;
    align-items:center;
+   font-size: 14px;
    margin:5px;
    padding:5px 2px;
    border-radius:3px;
    background-color:hsl(183, 100%, 15%);
    cursor:pointer;
  }
- .left .bill-input .input-option .form-check:hover{
+ .left .bill-input .input-option .form-check:hover label{
   background-color:hsl(172, 67%, 45%);
  }
  .left .bill-input .input-option .form-check:nth-child(6){
    background-color:transparent;
  }
+ input[type="radio"]:checked +label {
+  background: #000;
+  border-color: green;
+  color: white;
+}
  .left .bill-input .input-option .form-check .radio{
    display:none;
  }
  .left .bill-input .input-option .form-check .custom{
    width:100%;
-   font-size: 12px;
+   font-size: 14px;
    display:flex;
    justify-content:center;
    align-items:center;

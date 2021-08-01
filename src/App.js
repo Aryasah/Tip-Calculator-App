@@ -5,13 +5,17 @@ import person from './image/icon-person.svg'
 
 function App() {
   const [price,setPrice]=useState();
-  const [people,setPeople]=useState();
+  const [people,setPeople]=useState("");
   const [tip,setTip] = useState(0);
   const [tipAmount,setTipAmount] = useState("0.00");
   const [total,setTotal] = useState("0.00")
-  const [red,setRed]=useState(true)
+  const [color,setColor]=useState('white')
 
-    useEffect(()=>{calculate()},[price,tip,people])
+  const redColor={
+    border:`1px solid ${color}`
+  }
+
+  useEffect(()=>{calculate()},[price,tip,people])
 
   const calculate=()=>{
     let totals=(1+(tip*.01))*price
@@ -26,21 +30,18 @@ function App() {
     }
     else{
       setTotal("0.00");
-      setTipAmount("0.00");
-      if(people===0){
-        checkRed()
-      }
+      setTipAmount("0.00");    
     }
 
   }
-  useEffect(()=>{checkRed()},[people])
+  
   const checkRed =()=>{
-    if(people)
+    if(people.length > 0)
     {
-      setRed(true)
+      setColor("white")
     }
     else{
-      setRed(false)
+      setColor("red")
     }
 
   }
@@ -65,6 +66,10 @@ function App() {
     setPeople(e.target.value)    
   }
 
+  useEffect(()=>{checkRed()},[people])
+
+
+
   
   return (
     <div className="app">
@@ -73,7 +78,7 @@ function App() {
        <div className="left">
           <div className="bill-input">
             <h4>Bill</h4>
-            <div className="input-form">
+            <div className="input-form top-left">
               <img src={dolar} alt="dolar"/>
               <input type="text" placeholder="0" value={price} onChange={priceChange} />
             </div>
@@ -107,14 +112,13 @@ function App() {
             </div>
           </div>
           <div className="bill-input down-ink">
-            <h4>Number of people</h4>
-            {red? <div className="input-form">
+          {color!="red"?<h4>Number of people</h4>:<div style={{width:'100%',display:'flex',justifyContent: 'space-between'}}><h4>Number of people</h4><h4 style={{color:'red'}}>Can't be zero </h4></div>}
+            
+            <div style={redColor} className="input-form">
               <img src={person} alt="dolar"/>
               <input type="text" placeholder="0" value={people} onChange={peopleChange} />
-            </div> : <div className="input-form red">
-              <img src={person} alt="dolar"/>
-              <input type="text" placeholder="0" value={people} onChange={peopleChange} />
-            </div> }
+            </div>
+            
           </div>
        </div>
        <div className="right">
