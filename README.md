@@ -3,12 +3,15 @@
 
 ### Technologies used:
 * React js Framework
-
+* 
 ## Desktop Version
 ![image](https://user-images.githubusercontent.com/75942764/127781664-748fbbe4-ccec-4b2b-8770-caa6e06318c1.png)
 
 ## Mobile Version
-![image](https://user-images.githubusercontent.com/75942764/127781679-0fe732dc-3746-4478-8aa4-6b85ec49898b.png)
+<div align="center">
+<img src="https://user-images.githubusercontent.com/75942764/127781679-0fe732dc-3746-4478-8aa4-6b85ec49898b.png" />
+</div>
+
 
 ### To run:
 * First Fork the Repo
